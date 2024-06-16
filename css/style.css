@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* General reset */
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+:root {
+	/* Primary */
+	--red: hsl(0, 100%, 74%);
+	--green: hsl(154, 59%, 51%);
+	--white: hsl(0, 0%, 100%);
+
+	/* Accent */
+	--blue: hsl(248, 32%, 49%);
+
+	/* Neutral */
+	--dark-blue: hsl(249, 10%, 26%);
+	--grayish-blue: hsl(246, 25%, 77%);
+
+	/* Font weight */
+	--font-weight-normal: 400;
+	--font-weight-semi-bold: 600;
+	--font-weight-bold: 700;
+
+	/* Box shadow */
+	--box-shadow-normal: 0 1rem 2rem rgba(0, 0, 0, 0.05);
+	--box-shadow-lg: 0 1rem 0 rgba(0, 0, 0, 0.2);
+	--box-shadow-inset: inset 0 -0.4rem 0 rgba(0, 0, 0, 0.05);
+	--box-shadow-inset-lg: inset 0 -1rem 0 rgba(0, 0, 0, 0.07);
+}
+
+body {
+	font-family: 'Poppins', Sans-Serif;
+	font-size: 1.6rem;
+	font-weight: var(--font-weight-normal);
+	line-height: 1.5;
+	min-height: 100svh;
+	padding: 1.8rem;
+	color: var(--white);
+	background-color: var(--red);
+	background-image: url(../images/bg-intro-desktop.png);
+	background-size: cover;
+	background-position: center;
+}
+
+.intro {
+	max-width: 111rem;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	margin: 5rem auto;
+}
+
+.intro__text-container {
+	max-width: 52.5rem;
+}
+
+.intro__header {
+	font-size: 5rem;
+	font-weight: var(--font-weight-bold);
+	line-height: 1.2;
+	letter-spacing: -0.52px;
+	margin-bottom: 3rem;
+}
+
+/* Form container */
+.intro__form-container {
+	max-width: 54rem;
+}
+
+.form-title {
+	font-size: 1.5rem;
+	letter-spacing: 0.27px;
+	text-align: center;
+	background-color: var(--blue);
+	padding: 2rem 4rem;
+	margin-bottom: 2rem;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadow-lg);
+}
+
+.form-title span {
+	font-weight: var(--font-weight-bold);
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	background-color: var(--white);
+	padding: 3.5rem 4rem;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadow-lg);
+}
+
+.form__group {
+	position: relative;
+}
+
+.form__input {
+	min-width: 100%;
+	font-size: 1.4rem;
+	font-weight: var(--font-weight-semi-bold);
+	font-family: inherit;
+	color: var(--dark-blue);
+	padding: 1.4rem 2rem;
+	border: 0.1rem solid var(--grayish-blue);
+	border-radius: 0.5rem;
+	letter-spacing: 0.25px;
+	cursor: pointer;
+}
+
+.form__input:focus {
+	outline: none;
+	border: 1px solid var(--blue);
+	box-shadow: var(--box-shadow-normal);
+}
+
+.form__input::placeholder {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+.placeholder-color::placeholder {
+	color: inherit;
+}
+
+/* Error classes */
+.form__input-error {
+	color: var(--red);
+	border: 1px solid var(--red);
+	transition: border 0.1s ease-in;
+}
+
+.icon {
+	position: absolute;
+	top: 0;
+	right: 8%;
+	transform: translate(50%, 50%);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.1s ease-in;
+}
+
+.icon-error {
+	opacity: 1;
+	visibility: visible;
+}
+
+.firstname-error,
+.lastname-error,
+.email-error,
+.password-error {
+	font-size: 1.1rem;
+	font-style: italic;
+	text-align: right;
+	color: var(--red);
+	height: 1.2rem;
+	margin: 0.5rem 0 1.2rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.1s ease-in;
+}
+
+.error {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* Button */
+.button {
+	font-size: 1.5rem;
+	font-weight: var(--font-weight-semi-bold);
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	background: none;
+	border: none;
+	color: var(--white);
+	background-color: var(--green);
+	padding: 1.3rem 3rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	box-shadow: var(--box-shadow-inset);
+	transition: all 0.3s ease-in;
+}
+
+.button:hover {
+	opacity: 0.6;
+}
+
+.consent {
+	font-size: 1.1rem;
+	text-align: center;
+	color: var(--grayish-blue);
+}
+
+.consent span {
+	color: var(--red);
+	font-weight: var(--font-weight-semi-bold);
+}
+
+/* Success Message */
+.hidden {
+	max-width: 45rem;
+	min-width: 32.7rem;
+	width: 100%;
+	color: var(--white);
+	background-color: var(--blue);
+	border-radius: 1.2rem;
+	padding: 2rem;
+	margin: 0 auto;
+	position: fixed;
+	top: 2.5%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	box-shadow: var(--box-shadow-inset-lg);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease-in;
+	z-index: 999;
+}
+
+.success-title-box {
+	max-width: 40.2rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.success-title {
+	font-size: 1.8rem;
+	font-weight: 600;
+}
+
+.success {
+	opacity: 1;
+	visibility: visible;
+}
