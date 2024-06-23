@@ -60,6 +60,7 @@ body {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
+	gap: 4rem;
 	margin: 5rem auto;
 }
 
@@ -78,6 +79,7 @@ body {
 /* Form container */
 .intro__form-container {
 	max-width: 54rem;
+	width: 100%;
 }
 
 .form-title {
@@ -111,11 +113,12 @@ body {
 
 .form__input {
 	min-width: 100%;
+	min-height: 5rem;
 	font-size: 1.4rem;
 	font-weight: var(--font-weight-semi-bold);
 	font-family: inherit;
 	color: var(--dark-blue);
-	padding: 1.4rem 2rem;
+	padding: 0.5rem 2rem;
 	border: 0.1rem solid var(--grayish-blue);
 	border-radius: 0.5rem;
 	letter-spacing: 0.25px;

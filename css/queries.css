@@ -1,39 +1,55 @@
-@media screen and (max-width: 768px) {
-	html {
-		font-size: 50%;
-	}
+/* 908px - 56.75em */
+@media screen and (max-width: 56.75em) {
 	.intro {
 		grid-template-columns: 1fr;
-		gap: 4rem;
+		max-width: 100%;
+		text-align: center;
 	}
 
+	.intro__text-container,
+	.intro__form-container {
+		margin: auto;
+	}
+
+	.icon {
+		width: 2.4rem;
+		height: 2.4rem;
+	}
 }
 
 /* 570px- 35.62em */
-/* 
 @media screen and (max-width: 35.62em) {
 	html {
 		font-size: 56.25%;
 	}
 
-	.form__grid {
-		grid-template-columns: 1fr;
+	body {
+		background-image: url(../images/bg-intro-mobile.png);
 	}
 
-	.message__group .form__input {
-		min-height: 24rem;
+	.hidden {
+		min-width: 80%;
 	}
+}
 
-	.consent__label {
-		gap: 2.25rem;
-	}
-
-	.button {
-		margin-top: 2.5rem;
+/* 460px - 28.75em */
+@media screen and (max-width: 28.75em) {
+	html {
+		font-size: 50%;
 	}
 
 	.hidden {
 		width: 50%;
 	}
 }
-*/
+
+/* 358px - 22.37em */
+@media screen and (max-width: 22.37em) {
+	html {
+		font-size: 45%;
+	}
+
+	.intro__header {
+		font-size: 4.8rem;
+	}
+}
